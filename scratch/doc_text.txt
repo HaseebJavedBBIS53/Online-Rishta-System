@@ -1,0 +1,1228 @@
+Project Report 
+ 
+Rishta System – A Digital Matrimonial Platform 
+ 
+ 
+ 
+ 
+ 
+Submitted by 
+Haseeb Javed  
+ Session 2022-2026 
+ 
+ 
+Supervised by 
+Umair Waqas 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Department of Business Administration, 
+University of Sahiwal, Sahiwal
+
+i |  
+Rishta System – A Digital Matrimonial Platform 
+ 
+ 
+A project submitted to the 
+Department of Business Administration 
+In 
+ 
+Partial Fulfilment of the Requirements for the 
+Bachelor’s Degree in Information Systems 
+By 
+Haseeb Javed 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Internal Supervisor 
+Mr. Umair Waqas 
+ 
+Lecturer 
+Department of Business Administration 
+ 
+ 
+ 
+ 
+External Examiner 
+ 
+ 
+ 
+ 
+ 
+Chairperson  
+Dr. Waris Ali 
+ 
+Chairperson,  
+Department of Business Administration
+
+iii 
+ 
+COPYRIGHTS 
+ 
+This is to certify that the project titled "Rishta System – A Digital Matrimonial Platform" is 
+the genuine work carried out by Haseeb Javed , student of BBIS of Business Administration 
+Department, University of Sahiwal, Sahiwal during the academic year [Your Session] , in 
+partial fulfilment of the requirements for the award of the Bachelor of Information Systems 
+degree, and that the project has not previously formed the basis for the award of any other 
+degree, diploma, fellowship, or any other similar title.. 
+ 
+ 
+ 
+ 
+Haseeb Javed
+
+iv 
+ 
+DECLARATION 
+ 
+This is to declare that the project entitled "Rishta System – A Digital Matrimonial Platform" 
+is an original work done by undersigned, in partial fulfilment of the requirements for the 
+degree "Bachelors of Information Systems" at Business Administration Department, 
+University of Sahiwal, Sahiwal. 
+All the analysis, design and system development have been accomplished by the 
+undersigned. Moreover, this project has not been submitted to any other college or university. 
+ 
+ 
+ 
+ 
+Haseeb Javed
+
+v 
+ 
+ACKNOWLEDGEMENTS 
+ 
+First and foremost, we are grateful to Allah Almighty, who blessed us with the health, ability, and 
+guidance to complete this project successfully. Nothing could have been achieved without His help. 
+We express our sincere gratitude to our loving parents and teachers whose support enabled us to reach 
+this stage. We also extend our appreciation to our Head of Department, Dr. Waris Ali, and our 
+Coordinator, Dr. Atif, for their valuable support and guidance throughout our studies. 
+Finally, we would like to extend special thanks to Umair Waqas for providing us with an excellent 
+learning experience during this project. His constructive feedback inspired us to explore new ideas and 
+techniques for creating a secure and efficient digital matrimonial platform.
+
+vi 
+ 
+DEDICATION 
+ 
+We would like to dedicate this accomplishment to our beloved and caring Parents, friends, and to our 
+teachers, with the support of whom I am standing at this step of my life stairs. 
+We also dedicate this dissertation to Umair Waqas who has supported us throughout the process
+
+vii 
+ 
+Table of Contents 
+CHAPTER 1 	1 
+INTRODUCTION 	1 
+1.1 BACKGROUND ............................................................................................................................................ 1 
+1.2 TOOLS AND TECHNOLOGY USED ...................................................................................................................... 2 
+1.2.1 External Interface Requirements ....................................................................................................... 2 
+1.3 SUMMARY OF REQUIREMENTS ((SR) INITIAL REQUIREMENTS) ........................................................................... 3 
+1.3.1 Teachers and students account management ..................................................................................... 3 
+1.3.2 Processing Data................................................................................................................................. 3 
+1.3.3 Communication between Admin, teacher and Student ....................................................................... 3 
+1.3.4 Record Management .......................................................................................................................... 3 
+1.3.5 Reviews by student ............................................................................................................................. 3 
+1.4 GANTT CHAT ............................................................................................................................................... 4 
+1.5 PROJECT / PRODUCT FEASIBILITY REPORT (PFR) .............................................................................................. 4 
+1.5.1 Technical Feasibility .......................................................................................................................... 4 
+1.5.2 Operational Feasibility ...................................................................................................................... 4 
+1.5.3 Economic Feasibility ......................................................................................................................... 5 
+1.5.4 Schedule Feasibility ........................................................................................................................... 5 
+1.5.5 Specification Feasibility .................................................................................................................... 5 
+1.5.6 Motivational Feasibility ..................................................................................................................... 6 
+1.5.7 Legal & Ethical Feasibility ................................................................................................................ 6 
+CHAPTER 2 	7 
+PROBLEM DEFINING 	7 
+2.1 PROBLEM OF CLASS TIMETABLE ...................................................................................................................... 7 
+2.2 PROBLEM OF RE-SCHEDULING ......................................................................................................................................................................... 7 
+2.3 COMMUNICATION PROBLEM BETWEEN STUDENT AND TEACHER ............................................................................. 8 
+2.4 COMPLAINTS AND QUERIES ................................................................................................................................................................................ 8 
+2.5 REGISTRATION AREA ..................................................................................................................................... 8 
+2.6 SLOWNESS ................................................................................................................................................. 9 
+2.7 MISALLOCATION ........................................................................................................................................ 9 
+2.8 COLLISION ................................................................................................................................................. 9 
+2.9 RE-SCHEDULING OF EXAMINATION PAPERS (ROEP) ......................................................................................... 9 
+2.10 REDUCTION OF EXTRA CLASSES ................................................................................................................... 9 
+CHAPTER 3 	10 
+SOFTWARE REQUIREMENT SPECIFICATION 	10 
+3.1 INTRODUCTION ......................................................................................................................................... 10 
+3.1.1 Purpose ........................................................................................................................................... 10 
+3.1.2 Document Convention ..................................................................................................................... 10 
+3.1.3 Intended Audience ........................................................................................................................... 10 
+3.1.4 Project Scope ................................................................................................................................... 11 
+3.2 OVERALL DESCRIPTION ............................................................................................................................. 11 
+3.2.1 Project perspective .......................................................................................................................... 11 
+3.2.2 Project Function .............................................................................................................................. 12 
+3.2.3 User Classes and Characteristics .................................................................................................... 12 
+3.2.4 Operating Environment (OE) ........................................................................................................... 12 
+3.2.5 Design and Implementation Constraints (DCI) ............................................................................... 12 
+3.3 USER DOCUMENTATION ............................................................................................................................ 13 
+3.4 ASSUMPTIONS AND DEPENDENCIES (AD) ....................................................................................................... 13 
+3.5 EXTERNAL INTERFACE REQUIREMENTS .......................................................................................................... 14 
+3.5.1 User Interfaces ................................................................................................................................ 14 
+3.5.2 Software Interfaces .......................................................................................................................... 14 
+3.5.3 Communication Interfaces ............................................................................................................... 15
+
+viii 
+ 
+3.6 PROJECT FEATURES ................................................................................................................................... 15 
+3.6.1 Timetable management .................................................................................................................... 15 
+3.6.2 Communication System .................................................................................................................... 16 
+3.6.3 Feedback System ............................................................................................................................. 16 
+3.7 OTHER NON-FUNCTIONAL FEATURES ............................................................................................................. 17 
+3.7.1 Performance Requirements .............................................................................................................. 17 
+3.7.2 Safety Requirements......................................................................................................................... 17 
+3.8 SECURITY REQUIREMENTS ......................................................................................................................... 18 
+3.9 SOFTWARE QUALITY ATTRIBUTES(SQA) ....................................................................................................... 18 
+3.9.1 Correctness ...................................................................................................................................... 18 
+3.9.2 Reliability ........................................................................................................................................ 18 
+3.9.3 Suitability ......................................................................................................................................... 19 
+3.9.4 Learnability ..................................................................................................................................... 19 
+3.9.5 Robustness ....................................................................................................................................... 19 
+3.10 BUSINESS RULES ..................................................................................................................................... 19 
+CHAPTER 4 	21 
+METHODOLOGY 	21 
+4.1 TOOLS ................................................................................................................................................................................................................... 21 
+4.2 SOFTWARE SPECIFICATIONS ....................................................................................................................... 21 
+4.3 HARDWARE SPECIFICATIONS ....................................................................................................................... 22 
+CHAPTER 5 	23 
+DETAILED DESIGN & ARCHITECTURE 	23 
+5.1 INTRODUCTION ......................................................................................................................................... 23 
+5.2 SYSTEM ARCHITECTURE ............................................................................................................................. 23 
+5.2.1 Architecture Design & Approach ................................................................................................... 23 
+5.2.2 Architecture Design ....................................................................................................................... 24 
+5.2.3 Subsystem Architecture .................................................................................................................. 24 
+5.3 DETAILED SYSTEM DESIGN .......................................................................................................................... 24 
+5.3.1 Classification ................................................................................................................................. 25 
+5.3.2 Definition ...................................................................................................................................... 25 
+5.3.3 Responsibilities ............................................................................................................................. 25 
+5.3.4 Constraints .................................................................................................................................... 26 
+5.3.5 Composition ................................................................................................................................... 26 
+5.3.6 Interaction .................................................................................................................................... 26 
+5.3.7 Resources ..................................................................................................................................... 27 
+5.3.8 Processing .................................................................................................................................... 27 
+5.3.9 Interface/Exports .......................................................................................................................... 28 
+5.3.10 Detailed Subsystem Design .......................................................................................................... 28 
+CHAPTER 6 	34 
+IMPLEMENTATION & TESTING 	34 
+6.1 INTRODUCTION ......................................................................................................................................... 34 
+6.1.1 Project Management ......................................................................................................................... 34 
+6.1.2 Risk Management Plan .................................................................................................................... 34 
+6.2 TEST PLANS .............................................................................................................................................. 35 
+6.2.1 Test Plan of Main Menu Screen ....................................................................................................... 35 
+6.2.2 Test Plan of Login Screen ................................................................................................................ 36 
+6.2.3 Test Plan of Signup Screen .............................................................................................................. 37 
+6.2.4 Test Plan of Home page ................................................................................................................... 38 
+6.2.5 Test Plan of Feedback ...................................................................................................................... 39 
+6.2.6 Test Plan of Timetable Screen .......................................................................................................... 40 
+6.2.7 Test Plan of Communication ........................................................................................................... 40 
+6.2.8 Test Plan of Attendance Monitoring................................................................................................ 41 
+CHAPTER7 	43 
+RESULTS & DISCUSSIONS 	43
+
+ix |  
+7.1 REGISTER ACTIVITY .............................................................................................................................. 43 
+7.2 LOGIN ACTIVITY ................................................................................................................................... 44 
+7.3 ADMIN LOGIN ACTIVITY .......................................................................................................................... 45 
+7.4 STUDENT HOME ACTIVITY ....................................................................................................................... 46 
+7.5 TEACHER HOME ACTIVITY ....................................................................................................................... 46 
+7.6 ADMIN HOME ACTIVITY .......................................................................................................................... 47 
+CHAPTER 8 	48 
+CONCLUSION & FUTURE WORK 	51 
+8.1 CONCLUSION & SCOPE ................................................................................................................................ 51 
+8.2 Lesson Learnt ..................................................................................................................................... 51 
+8.3 CHECK OBJECTIVES ................................................................................................................................... 52 
+REFERENCES 	53
+
+x |  
+LIST OF TABLES 
+ 
+Table 1: Hardware Interface Specifications 
+Table 2: Software Interface Specifications 
+Table 3: Software Specifications (Development Environment) 
+Table 4: Hardware Specifications (Development) 
+Table 5: Admin Input Strategies 
+Table 6: Admin Output Strategies 
+Table 7: User Input Strategies 
+Table 8: User Output Strategies 
+Table 9: Risk Management Plan 
+Table 10: Test Plan – Registration 
+Table 11: Test Plan – Login 
+Table 12: Test Plan – Profile Creation 
+Table 13: Test Plan – Search & Filter 
+Table 14: Test Plan – Send Interest 
+Table 15: Test Plan – Chat 
+Table 16: Test Plan – Admin User Management 
+Table 17: Test Plan – Report Generation 
+Table 18: Check Objectives 	52
+
+xi |  
+LIST OF FIGURES 
+(To be added after final formatting) 
+Figure 1: Gantt Chart 
+Figure 2: Admin Use Case Diagram 
+Figure 3: User Use Case Diagram 
+Figure 4: ER Diagram 
+Figure 5: System Architecture Diagram 
+Figure 6: Sequence Diagram – Send Interest 
+Figure 7: Component Diagram 
+Figure 8: Registration Form (Screenshot) 
+Figure 9: Login Page (Screenshot) 
+Figure 10: User Dashboard (Screenshot) 
+Figure 11: Search Results with Blurred Photos (Screenshot) 
+Figure 12: Profile View with Watermark (Screenshot) 
+Figure 13: Interests Page (Screenshot) 
+Figure 14: Chat Interface (Screenshot) 
+Figure 15: Admin Dashboard (Screenshot) 
+Figure 16: User Management (Screenshot) 
+Figure 17: Profile Verification Queue (Screenshot) 
+Figure 18: Message Moderation (Screenshot) 
+Figure 19: Subscription Plans (Screenshot) 
+Figure 20: Reports Page (Screenshot) 	50
+
+xii |  
+LIST OF ABBREVIATION 
+ 
+ORS Online Rishta System 
+UI User Interface 
+UX User Experience 
+DB Database 
+CTA Call to Action 
+FAQ Frequently Asked Questions 
+KYC Know Your Customer 
+CMS Content Management System 
+PDF Portable Document Format 
+CSV 
+Comma-Separated Values 
+ID 
+Identification 
+SSL Secure Sockets Layer
+
+xiii 
+| 
+ 
+Abstract 
+The "Rishta System" is a comprehensive digital matrimonial platform designed to connect individuals 
+seeking life partners in a secure, efficient, and culturally appropriate manner. The core idea is to create 
+an online ecosystem that simplifies the matchmaking process, moving beyond traditional methods that 
+are often time-consuming and limited in reach. This project addresses key challenges such as privacy 
+concerns, profile authenticity, and effective communication between potential matches. The system is 
+divided into two main interfaces: a user-facing side and an administrative backend. The user side allows 
+individuals to register, create detailed profiles with privacy controls, search for matches using advanced 
+filters, send interest requests, and communicate via a chat system that unlocks only upon mutual 
+acceptance. Key features include profile photo watermarking for security, a compatibility score to guide 
+users, and a subscription model for premium access. The admin side provides a powerful dashboard for 
+managing users, verifying profiles, monitoring messages for inappropriate content, handling 
+subscriptions, and generating reports. The system is built using HTML, CSS, Bootstrap, JavaScript, 
+PHP, and MySQL, with XAMPP providing the local server environment. This combination ensures a 
+robust, scalable, and easily deployable web application. The system aims to provide a trusted, user-
+friendly, and feature-rich platform that respects cultural values while leveraging modern technology to 
+help people find their perfect match.
+
+1 |  
+Chapter 1  
+Introduction 
+In today's fast-paced world, the traditional methods of finding a life partner—such as relying on family 
+networks, word-of-mouth, or newspaper advertisements—have become less effective and more time-
+consuming. These methods offer limited reach, lack proper privacy, and provide no standardized way 
+to filter potential matches based on personal preferences. Many individuals and families face difficulties 
+in finding suitable matches due to geographical, cultural, or informational barriers. The digital 
+transformation has touched almost every aspect of life, yet the matchmaking process in many societies 
+remains largely offline and inefficient. 
+This project is conceived to address these limitations by providing a digital platform where users can 
+create profiles, define their preferences, and connect with others in a controlled and respectful manner. 
+The "Rishta System" leverages modern web technologies to offer a secure, scalable, and user-friendly 
+solution. It empowers users to take control of their search, ensures authenticity through admin 
+verification, and fosters meaningful connections through a safe communication channel. 
+The system is built using open-source technologies: HTML, CSS, Bootstrap, JavaScript, PHP, and 
+MySQL, with XAMPP as the local development environment. This stack was chosen because of its 
+stability, wide community support, and ease of deployment. The platform is designed to be responsive, 
+ensuring accessibility across desktops, tablets, and mobile devices.
+
+2 |  
+1.1 Tools and technology used 
+The development of the Rishta System utilizes a combination of front-end, back-end, and database 
+technologies to deliver a complete web-based solution. Below is a detailed breakdown: 
+• HTML5 
+• CSS3 
+• Bootstrap 4/5 
+• JavaScript (ES6) 
+• PHP 7.4+ 
+• MySQL 
+• XAMPP 
+1.1.1 External Interface Requirements 
+1. User Interface 
+The user interface is built with Bootstrap to ensure responsiveness across all devices. It includes intuitive 
+navigation, form elements, modals, and alerts. All forms are validated both client-side (JavaScript) and 
+server-side (PHP).GUI along with meaningful frames and button 
+ 
+2. Hardware Interface 
+ 
+The system is designed to run on standard hardware used in academic and professional environments. 
+ 
+ 
+Hardware Environment 	Intel Core i5  
+System Configuration 	8 GB (minimum 4 GB) 
+Operating system 	Windows 10 / 11, macOS, or Linux 
+Table 1 Hardware Interface 
+3. Software Interface 
+ 
+Front End 
+HTML5, CSS3, Bootstrap 5, JavaScript
+
+3 |  
+Back End 	PHP (7.4 or higher) 
+Table 2 Software Interface
+
+4 |  
+        Summary of Requirements ((SR) Initial Requirements) 
+ 
+1.1.2 User Account Management 
+1. Users must register with full name, email, password, gender, and date of birth. 
+2. Email must be unique and valid. 
+3. Minimum age: 18 years (calculated from date of birth). 
+4. Passwords must be at least 8 characters with mixed case (and optionally numbers). 
+5. After registration, user can log in using email and password. 
+6. Session management: user remains logged in until logout or session expiry. 
+1.1.3 Profile Management 
+1. Each user can create and edit a profile with fields: city, education, profession, 
+religion, bio, and phone (optional). 
+2. Profile photos can be uploaded (multiple photos, one primary). 
+3. Photo privacy: users can choose who sees each photo (public, matched only, premium 
+only). 
+4. Profile photos are automatically watermarked on upload using PHP GD library to 
+prevent misuse. 
+5. Profile completion percentage is shown to encourage users to complete details 
+1.1.4 Search and Matching 
+1. Users can search profiles using filters: age range, city, education, religion, profession. 
+2. Results can be sorted by last active, profile completeness, or premium membership. 
+3. Compatibility score (0-100%) is calculated based on matching preferences and 
+displayed. 
+4. Suggested matches are shown on dashboard based on user’s profile and interests. 
+1.1.5 Interest Requests and Communication 
+1. Users can send “interest” requests to other profiles. 
+2. Interest status can be pending, accepted, or rejected. 
+3. Chat is only unlocked after mutual acceptance of interest. 
+4. Hidden information (phone, email) is revealed only after mutual acceptance. 
+5. Each message can be reported by the recipient; flagged messages are sent to admin
+
+5 |  
+ 
+ 
+1.1.6 Record Management (Admin) 
+ 
+1. Admin has full CRUD access to user accounts (view, edit, suspend, delete). 
+2. Admin can reset user passwords. 
+3. Admin can view all interests, messages, and reports. 
+4. Admin can generate reports (user lists, activity logs, revenue summaries). 
+          1.2.6 Subscription Management 
+1. Two subscription tiers: Free and Premium. 
+2. Free users have limited profile views per day (e.g., 10), blurred photos for other profiles, and 
+chat disabled. 
+3. Premium users have unlimited views, full photo visibility, chat enabled, and priority in search 
+results.
+
+6 |  
+Gantt Chart 
+ 
+ 
+Figure 1 Gantt chat 
+ 
+1.2 Project / Product Feasibility Report (PFR) 
+A project idea hands down several insights for an in-depth investigation to further analyse 
+the project. Hence there is a need to conduct a feasibility study by exploring many aspects of 
+the project. A feasibility report has been prepared for Online Campus Depot Android 
+application, addressing the following feasibilities: 
+1. Technical 
+2. Operational 
+3. Economic 
+4. Schedule 
+5. Specification 
+6. Information 
+7. Motivational 
+8. Legal and Ethical 
+1.2.1 Technical Feasibility 
+The project uses mature, open-source technologies (HTML, CSS, Bootstrap, JavaScript, 
+PHP, MySQL). These technologies are well-documented, and there is ample community 
+support. Our team has the required skills to develop the system using these tools. The 
+XAMPP environment allows for seamless local development and testing. Therefore, the 
+project is technically feasible. 
+1.2.2 Operational Feasibility
+
+7 |  
+The system is designed with a user-friendly interface. Both tech-savvy and non-technical users can 
+navigate easily. The admin panel provides comprehensive tools to manage the platform with minimal 
+training. Automated processes (matching, interest handling) reduce manual effort, making the system 
+operationally efficient.
+
+8 |  
+Economic Feasibility 
+ 
+The development cost is minimal as all tools are free and open-source. The main cost would 
+be for hosting and domain if deployed live. However, for the purpose of this academic 
+project, the system can run locally on XAMPP or be hosted on a free web server. The 
+premium subscription model can generate revenue in a real-world scenario, making it 
+economically viable. 
+Cost Estimates: 
+1. Domain (for deployment): 2,000 PKR per year  
+2. Hosting (shared hosting): 10,000 PKR per year  
+3. Development cost: 0 PKR (because the system is developed by the student)  
+4. Total estimated cost: 12,000 PKR per year 
+Benefits Estimates 
+The Rishta System provides several important benefits. It saves time by allowing users to 
+search for matches online instead of traditional methods. It reduces manual work because all 
+records are stored automatically in the database. The system also improves privacy, security, 
+and communication between users. In the future, the platform can also generate revenue 
+through premium subscriptions. 
+1.2.3 Schedule Feasibility 
+A realistic schedule was prepared using the Gantt chart, considering the academic timeline. 
+All phases are well-defined, and milestones are achievable within the given period. Regular 
+meetings with the supervisor ensure that the project stays on track. 
+1.2.4 Specification Feasibility 
+The requirements are clearly defined and within the scope of a BIS final year project. Each functional 
+requirement can be implemented using the chosen technologies. There is no requirement that is 
+technically impossible or too complex.
+
+9 |  
+1.2.5 Motivational Feasibility 
+The project addresses a real social need, which keeps the development team motivated. The 
+supervisor’s guidance and the importance of the project for the degree also drive motivation 
+1.2.6 Legal & Ethical Feasibility 
+All data collected is with user consent. The system complies with data protection principles (not sharing 
+data without permission). Photos are watermarked to prevent unauthorized use. The platform 
+discourages fraudulent activities through verification. No copyrighted code or assets are used without 
+permission.
+
+10 |  
+Chapter 2  
+Problem Defining 
+The existing matchmaking methods face several critical issues that this project aims to solve. 
+Traditional systems rely mainly on family networks, word-of-mouth, and newspaper 
+advertisements, which are time-consuming and limited in reach. These methods also lack 
+proper privacy and security, as personal information and photographs are often shared 
+without user control. 
+Another major problem is the difficulty in filtering suitable matches based on preferences 
+such as age, education, profession, and city. Communication between potential matches is 
+also not structured, which creates misunderstandings and delays. In addition, manual record 
+management makes the process inefficient and difficult to maintain. 
+The Rishta System is developed to overcome these problems by providing a secure, efficient, 
+and user-friendly digital platform for matchmaking. 
+2.1 Problem of class timetable 
+Right now, University of Sahiwal is using the criteria of pasting the timetable on the classes 
+and office bulletin board and students have to approach to the board to check their relevant 
+class timetable. This is also a hectic for a student and even for a teacher. Because sometimes 
+university management has to change the timetable accordingly to the shortage or 
+unavailability of teacher. Or sometimes due to sudden shutdown of university in response of 
+city situation. At that time most of the students and teachers don’t get the new timetable on 
+time and most of the students miss their classes. It’s not easy for each and every student in 
+person to go and check the bulletin board every time if the timetable has been changed or 
+still not work upon it. 
+2.2 problem of Reach and Access 
+Traditional matchmaking systems mainly rely on personal networks, relatives, friends, and 
+newspaper advertisements, which have very limited reach. Most individuals are restricted to 
+their immediate social circle, which reduces the chances of finding a suitable life partner who 
+meets all the required criteria such as education, profession, age, and location. If a suitable 
+match is not available within the family or community circle, the process becomes slow and 
+difficult. 
+In addition, traditional methods do not effectively use modern technology or the internet to 
+expand search options. People from different cities or backgrounds cannot easily connect 
+with each other, which further limits opportunities. As a result, many individuals spend a
+
+11 |  
+long time searching for a suitable partner due to the limited reach and accessibility of 
+traditional matchmaking methods. 
+2.3 Problem of Privacy 
+In conventional methods, personal details (photos, phone numbers, family background) are 
+shared with multiple intermediaries, leading to privacy breaches. Users have no control over 
+who sees their information, and once shared, it cannot be retracted. 
+2.4 Problem of Authenticity 
+It is extremely difficult to verify the information provided by potential matches. 
+Misrepresentation of age, profession, marital status, or even identity is common. This lack of 
+trust discourages genuine individuals 
+2.5 Problem of Inefficient Filtering 
+Manually filtering matches based on dozens of criteria (age, education, city, etc.) is tedious and time-
+consuming. There is no systematic way to shortlist candidates who match one’s specific preferences.
+
+12 |  
+2.6 Communication Problem 
+Initiating a conversation can be awkward and may cause embarrassment. There is no formal, 
+safe channel to express interest without fear of rejection or misinterpretation. Often, 
+communication is delayed or lost 
+2.7 Security and Safety 
+Meeting strangers through ads or referrals poses safety risks. There is no mechanism to report 
+or block malicious individuals. Users are vulnerable to harassment or fraud. 
+2.8 Manual Administration 
+It is tough to update timetable when classes are already allocated or allotted to teachers. 
+Sometimes at the same time classes are mismanaged and both classes are there out of room 
+to attend the lecture so finding another room is totally problematic at that time. 
+2.9 Subscription and Access  
+Without a digital system, there is no clear distinction between basic and premium services. 
+Users have no option to pay for enhanced features, and the service provider cannot monetize 
+effectively. 
+2.10  Lack of Data-Driven Insights 
+Manual systems provide no analytics. There is no way to understand user preferences, match success 
+rates, or popular demographics, making it impossible to improve services.
+
+13 |  
+Chapter 3  
+Software Requirement Specification 
+This chapter will discuss the detail of necessary system requirements required to develop the 
+system. It will elaborate the functional requirements and non-functional requirements. 
+1.1 Introduction 
+1.1.1 Purpose 
+This Software Requirements Specification (SRS) document provides a complete description 
+of the functional and non-functional requirements of the Rishta System. It is intended to guide 
+developers and ensure that the final product meets user expectations. 
+1.1.2 Document Convention 
+1. Bold text indicates key terms. 
+2. Monospaced text is used for code, variables, and file names. 
+3. Italics are used for emphasis. 
+1.1.3 Intended Audience 
+This document is intended for multiple audiences involved in the development and evaluation of the 
+Rishta System. It provides project developers with a clear understanding of the system requirements, 
+design specifications, and implementation guidelines, enabling them to develop and maintain the 
+platform efficiently. It assists the project supervisor in monitoring progress, reviewing design choices, 
+and providing constructive feedback throughout the development process. Additionally, the document 
+serves as a reference for the evaluation committee, allowing them to assess the objectives, 
+methodology, functionality, and overall effectiveness of the system during the final project 
+evaluation. By addressing the needs of these audiences, the document ensures that all stakeholders 
+have a comprehensive view of the project and its deliverables.
+
+14 |  
+1.1.4 Project Scope 
+The scope includes: 
+ 
+1. User registration and authentication 
+2. Profile creation and management 
+3. Advanced search and matchmaking 
+4. Interest request system 
+5. Chat system (mutual interest based) 
+6. Admin dashboard with user management, verification, reports 
+7. Subscription management 
+8. Responsive web interface 
+Out of scope: Mobile apps (future work), payment gateway integration (simulated for academic purposes). 
+1.2 Overall Description 
+1.2.1 Project perspective 
+The Rishta System is a new, self-contained web application designed to provide a modern alternative 
+to traditional matchmaking methods. It does not replace any existing system but aims to enhance 
+accessibility and efficiency by leveraging online technologies, offering users a more convenient way 
+to find compatible life partners.
+
+15 |  
+1.2.2 Project Function 
+ 
+The system encompasses several key functions to support both users and administrators. It 
+provides user management to handle registration, authentication, and account settings. 
+Profile management allows users to create, update, and maintain detailed personal profiles. 
+Search and matching functionality enable users to find suitable partners based on specified 
+criteria, while interest management allows expressing and tracking interest between users. 
+The platform also facilitates communication through chat and notifications, offers admin 
+management for controlling users and content, and supports reporting for monitoring system 
+activity and generating insights. 
+1.2.3 User Classes and Characteristics 
+The system serves multiple classes of users. Guests (visitors) can view limited preview profiles and are 
+encouraged to register for full access. Registered users (free) can create profiles, search for matches, 
+send interests, and view a limited number of profiles, while chat functionality remains restricted. 
+Premium users enjoy unlimited profile views, full photo visibility, active chat capabilities, and priority 
+placement in search results. The administrator has full access to all data, including user management, 
+reports, and system settings, ensuring smooth operation and oversight. 
+ 
+1.2.4 Operating Environment (OE) 
+ 
+The Rishta System is hosted on a server environment supporting Apache, PHP, and MySQL, 
+enabling users to access the application through web browsers on any device with an internet 
+connection. This setup ensures platform independence and accessibility across desktops, 
+tablets, and mobile devices. 
+1.2.5 Design and Implementation Constraints (DCI) 
+The design of the system must be intuitive and user-friendly for all age groups, with a responsive interface 
+compatible with mobile browsers. Implementation is constrained to the use of PHP and MySQL, and no 
+paid third-party services are to be used, ensuring cost-effectiveness and maintainability. 
+ 
+1.3 User Documentation 
+Comprehensive documentation will accompany the system. A user manual (PDF) guides 
+users through registration, profile setup, search, sending interests, and chat features. An 
+admin manual provides instructions for managing users, verifying profiles, and generating 
+reports. Additionally, an online FAQ and help section will be integrated within the 
+application to support users with common issues.  
+1.4 Assumptions and Dependencies (AD) 
+The system assumes that users possess basic computer and internet skills and provide accurate 
+personal information. Key dependencies include properly installed and configured Apache, PHP,
+
+16 |  
+and MySQL on the server 
+ 
+1.5 External Interface Requirements 
+1.5.1 User Interfaces 
+ 
+The user interface is designed to be clean and modern, utilizing Bootstrap for responsive 
+layouts that adapt to different screen sizes. Forms include real-time validation for enhanced 
+user experience, while the admin interface leverages data tables for efficient management 
+and navigation of system data. 
+1.5.2 Software Interfaces 
+ 
+The application uses PHP scripts to handle HTTP requests and communicates with the MySQL 
+database via MySQL or PDO. The system also interacts with the server file system to store and 
+retrieve profile photos securely.
+
+17 |  
+1.5.3 Communication Interfaces 
+ 
+Communication is primarily conducted over HTTP/HTTPS protocols, with AJAX 
+(JavaScript) employed for asynchronous operations such as chat messaging and interest 
+updates. Optional email notifications are handled through the PHP mail function to keep 
+users informed of relevant activities. 
+1.6 Project Features 
+The proposed application has some important and basic features which are necessary. Profile 
+of the application consists of the following features. 
+1.6.1 Profile Privacy & Photo Security 
+We help you save time to focus on what’s important. A timetable management system for 
+businesses to efficiently measure the time spent on projects, meetings, interviews. Know 
+where your time goes. It is especially required for the academic sessions because when there 
+are a lot of students studying at the same place it is hard to show them a paper
+
+18 |  
+description of timetable. Some of them go to noticeboards somehow timetable changes due 
+to some reasons they don’t even know but they follow the old one. 
+1.6.1.1. Functional Requirements 
+ 
+1. Users can set photo visibility: public, only matched, only premium. 
+2. All uploaded photos are watermarked with a semi-transparent logo using PHP GD library. 
+3. Watermarking happens at upload time; original file is not stored. 
+4. Profile photos are stored in a folder with random filenames. 
+1.6.1.2.  Non-Functional Requirements: 
+ 
+1. Watermark must be clearly visible but not intrusive. 
+2. Access control must be enforced at both PHP and database level. 
+1.6.2 Search & Matching Logic 
+1.6.2.1. Functional Requirements 
+ 
+1. Search filters: age range, city, education, religion, profession, income range (optional). 
+2. Results sorted by compatibility score (calculated based on matching profile fields and preferences). 
+3. Compatibility score stored temporarily or calculated on the fly. 
+4. Users can save searches (future enhancement). 
+1.6.2.2. Non-Functional Requirements 
+ 
+1. Search queries must be optimized with MySQL indexing. 
+2. Response time under 3 seconds for up to 10,000 profiles. 
+. 
+1.6.3 Interest Requests & Chat
+
+19 |  
+1.6.3.1. Functional Requirement 
+ 
+1. Send interest with a short optional message. 
+2. Interest status: pending, accepted, rejected. 
+3. Upon acceptance, both users can see each other's hidden contact info (phone, email) and chat is 
+enabled. 
+4. Chat interface shows message history, allows reporting of individual messages. 
+5. Admin can view reported messages and suspend users. 
+ 
+1.6.3.2.  
+2. Send interest with a short optional message. 
+3. Interest status: pending, accepted, rejected. 
+4. Upon acceptance, both users can see each other's hidden contact info (phone, email) and chat is enabled. 
+5. Chat interface shows message history, allows reporting of individual messages. 
+6. Admin can view reported messages and suspend users. 
+6.1 Other Non-functional features 
+6.1.1 Performance Requirements 
+ 
+1. Page load time ≤ 3 seconds on average. 
+2. Concurrent users: at least 50. 
+. 
+6.1.2 Safety Requirements 
+ 
+1. Regular database backups. 
+2. Error logging for debugging. 
+3. Graceful handling of server errors (custom error pages).
+
+20 |  
+6.2 Security Requirements 
+ 
+1. Passwords hashed using password hash (). 
+2. Prepared statements or parameterized queries to prevent SQL injection. 
+3. Output encoding with html special chars () to prevent XSS. 
+4. Session fixation protection by regenerating session ID after login. 
+5. Admin pages protected by session and role check. 
+6.3 Software Quality Attributes (SQA) 
+6.3.1 Correctness 
+All features must work as specified. The compatibility score must be computed accurately. 
+Interest status transitions must follow the defined logic.software system. 
+6.3.2 Reliability  
+The system should be available 99% of the time during testing. Database connections must be closed 
+properly.
+
+21 |  
+The blunder rate consists on the occurrence of given contributions and on the possibility that 
+an input will lead to solution an error. 
+6.3.3 Suitability 
+The interface should be intuitive, with clear labels, tooltips, and error messages 
+6.3.4 Maintainability 
+Code should be modular (separate files for functions, configuration, database connection). Comments 
+and documentation provided. 
+6.3.5 Portability 
+The system can be deployed on any server with PHP 7.4+ and MySQL 5.7+. 
+ 
+6.4 Business Rules 
+ 
+1. A user must be at least 18 years old to register. 
+2. Premium subscription duration: 1 month, 3 months, 6 months, 1 year (defined by admin). 
+3. Free users can view up to 10 profiles per day (configurable). 
+4. A user cannot send more than 20 interests per day (to prevent spam)
+
+22 |  
+Chapter 4  
+Methodology 
+The project followed an iterative and incremental approach, combining elements of the 
+waterfall model for planning and prototyping for user feedback. The process consisted of: 
+Requirement Gathering: Interviews with potential users, analysis of existing matchmaking 
+platforms. 
+System Design: Database design, UI wireframes, system architecture. 
+Implementation: Coding in phases: basic authentication, profile management, search, 
+interests, chat, admin panel. 
+Testing: Unit testing of PHP functions, integration testing of modules, UAT with a small 
+user group. 
+Deployment: Local deployment using XAMPP for final demonstration 
+4.1 Tools 
+ 
+ 
+ 
+ Tool 	Purpose 
+VS Code 	Code editor with PHP, HTML, CSS, JS extensions 
+XAMPP 	Local server (Apache, MySQL, phpMyAdmin) 
+phpMyAdmin 	Database management 
+Git 	Version control (optional) 
+Chrome DevTools Debugging frontend
+
+23 |  
+ 
+4.2 Software Specifications 
+ 
+Operating System 
+Windows 10 Pro 
+XAMPP 
+3.3.0 (Apache 2.4, MySQL 8.0, PHP 7.4) 
+Code Editor Antigravity 
+Table 3 Software Specifications 
+ 
+4.3 Hardware Specifications 
+ 
+Processor 	Intel Core i5-8250U 
+RAM 	1GB 
+Hard disk drive 	16GB 
+Table 4 Hardware Specification
+
+24 |  
+Chapter 5  
+Detailed Design & Architecture 
+5.1 Introduction 
+This chapter describes the architectural design, database schema, and detailed module design 
+of the Rishta System. 
+5.2 System Architecture 
+The system is designed using a three-tier architecture, which separates the application into 
+distinct layers, each with specific responsibilities. The presentation tier is the front-end 
+interface that users interact with through their web browsers, utilizing HTML for structure, 
+CSS for styling, Bootstrap for responsive design, and JavaScript for interactivity. The logic 
+tier, or business logic layer, consists of PHP scripts running on the server that handle user 
+requests, enforce business rules such as matching criteria and chat permissions, and manage 
+communication with the database. The data tier serves as the back-end storage, where the 
+MySQL database stores all persistent information including user profiles, messages, and 
+administrative data. Requests from the client are processed by the logic tier, which retrieves 
+or updates data from the database and sends the results back to the presentation tier for 
+display. This layered approach ensures a clear separation of concerns, making the system 
+more organized, maintainable, and scalable. 
+         5.2.1 Architecture Design & Approach 
+The architecture of the Online Rishta Management System is a pre-planned arrangement of 
+application features that defines the core functionality for users and guides the development lifecycle. 
+This system is designed to ensure that the requirements of users are fully met. The application is 
+intended for Android smartphones, providing a smart and responsive experience. Any errors or bugs 
+found during usage will be promptly addressed. Continuous enhancement of modules will ensure 
+stability and maintain the system’s relevance in the competitive market.
+
+25 |  
+5.2.1 Architecture Design 
+The architecture of the application is a crucial element that directly impacts user engagement. 
+A well-structured and visually appealing architecture attracts users and encourages regular 
+interaction. In the Rishta Management System, the architecture is designed to allow users to 
+register, manage their profiles, search for matches, communicate with other users, and 
+provide feedback. The main modules, including Profile Management, Matchmaking, 
+Communication, and Feedback & Monitoring Systems, are integrated into a single cohesive 
+model. This structure ensures smooth navigation, timely notifications, and an overall 
+seamless experience while maintaining proper interrelationships between all components of 
+the application. 
+5.2.2 Subsystem Architecture 
+The subsystem architecture divides the application’s functionalities into smaller, independent 
+modules that collectively provide the full set of features. In the Rishta Management System, 
+the primary modules include Profile Management, Matchmaking, Communication, and 
+Feedback & Monitoring. The Profile Management module allows users to create and update 
+their personal profiles, upload photos, and manage privacy settings. The Matchmaking 
+module enables users to search for potential matches, receive suggested matches, and send 
+or respond to interest requests. The Communication module facilitates chat and notifications 
+between users, ensuring clear and effective interaction. Finally, the Feedback & Monitoring 
+module allows users to provide feedback, while administrators monitor activities, detect 
+misuse, and maintain system integrity. Each subsystem ensures continuity, efficiency, and 
+data security within the overall system. 
+5.3 Detailed System Design 
+The system design defines the workflow of the application, providing an organized and interactive 
+experience for users. Upon launching the app, users are directed to a login or registration screen. 
+Existing users can log in using their credentials, while new users are guided through the registration 
+process. After authentication, users access the home screen, which displays the various features 
+available within the app, such as profile search, sending interest, chatting, upgrading subscriptions, and 
+providing feedback. The system ensures proper integration between modules, allowing smooth 
+navigation and interaction between different functionalities.
+
+26 |  
+5.3.1 Classification 
+The main features of the Rishta Management System include the Profile Management 
+System, Matchmaking System, Communication System, and Feedback & Monitoring 
+System. Each feature is designed to handle specific tasks and operates with backend support 
+for data storage and processing. Profile Management stores user information securely, 
+Matchmaking handles search and suggested matches, Communication enables interaction, 
+and Feedback & Monitoring allows administrators to oversee activities and gather user 
+insights. 
+5.3.2 Definition 
+The Profile Management module allows users to manage personal information, photos, and 
+privacy settings. The Matchmaking module provides consistent search results, suggested 
+matches, and interest management, helping users find compatible profiles efficiently. The 
+Communication module ensures smooth interaction between users, delivering messages and 
+notifications in a clear and organized manner. The Feedback & Monitoring module enables 
+users to submit feedback regarding the app or other users, while administrators monitor 
+activities to maintain quality, security, and system effectiveness.teachers are present or not 
+in the institute. 
+5.3.3 Responsibilities 
+5.3.4  
+The Profile Management system ensures users can create and update profiles securely, maintaining 
+privacy. The Matchmaking system provides intelligent search, suggested matches, and interest 
+handling. The Communication system allows users to chat and receive notifications, reducing 
+misunderstandings or delays. The Feedback & Monitoring system collects user feedback and tracks 
+activities, enabling administrators to detect issues, monitor performance, and implement improvement.
+
+27 |  
+ 
+ 
+Use case Diagram 
+ 
+Figure 1Admin Use Case Diagram 
+ 
+ 
+Figure 2 : user Use Case Diagram
+
+28 |  
+  
+ 
+ 
+ 
+ 
+5.3.10.3 Sequence Diagram 
+A sequence diagram describes that how a group of objects work together. This diagram is 
+used by software developers to understand requirements for new software. In this diagram 
+groups are involved to upload documentation through this given process in Campus on 
+mobile.
+
+29 |  
+  
+ 
+Figure 5 Sequance Diagram 
+5.3.10.4 Component Diagram 
+ 
+Figure 3  Sequence Diagram
+
+30 |  
+Chapter 6  
+Implementation & Testing 
+6.1 Implementation Details 
+In this chapter we go through a light on testing plans and implementations. 
+6.1.1 Project Structure 
+text 
+rishta-system/ 
+├── admin/                   
+│   ├── css/                 
+│   ├── js/                  
+│   ├── includes/            
+│   ├── process/             
+│   ├── index.php            
+│   ├── dashboard.php        
+│   ├── users.php            
+│   ├── user_management.php  
+│   ├── reports.php          
+│   ├── settings.php         
+│   ├── subscriptions.php    
+│   ├── support.php          
+│   ├── messaging_system.php 
+│   ├── announcements.php    
+│   ├── payments.php         
+│   ├── profile_management.php 
+│   ├── verifications.php    
+│   ├── activity_logs.php    
+│   ├── matches.php          
+│   └── user_details.php     
+│ 
+├── user/
+
+31 |  
+│   ├── api/                 
+│   ├── process/             
+│   ├── dashboard.php        
+│   ├── profile.php          
+│   ├── view_profile.php     
+│   ├── search.php           
+│   ├── matches.php          
+│   ├── interests.php        
+│   ├── chat.php             
+│   ├── notifications.php    
+│   ├── preferences.php      
+│   ├── settings.php         
+│   ├── subscription.php     
+│   ├── payment_history.php  
+│   ├── payment_checkout.php 
+│   ├── shortlist.php        
+│   ├── visitors.php         
+│   └── activity.php         
+│ 
+├── config/                  
+│   ├── database.php         
+│   └── functions.php        
+│ 
+├── includes/                
+│   ├── header.php           
+│   └── footer.php           
+│ 
+├── assets/                  
+│   ├── css/                 
+│   ├── js/                  
+│   └── images/              
+│ 
+├── index.php
+
+32 |  
+├── login.php                
+├── register.php             
+├── logout.php               
+├── readme.txt               
+└── database.sql             
+6.1.2 Key Implementation Features 
+• Password Hashing: password hash() with bcrypt. 
+• Watermarking: Uses image copy merge () from GD library. 
+• AJAX Chat: Polling every 5 seconds using jQuery. 
+• Session Management: session_start () and session regeneration on login. 
+• Database Layer: MySQL with prepared statements. 
+6.2 Testing 
+Testing was conducted at multiple levels: 
+6.2.1 Unit Testing 
+Individual PHP functions (e.g., calculate_compatibility(), watermark_image()) were tested with various 
+inputs. 
+6.2.2 Integration Testing 
+Tested interactions between modules (e.g., interest acceptance triggers chat creation). 
+6.2.3 User Acceptance Testing 
+Five users (age 20-30) were invited to test the system and provide feedback. Issues like unclear error 
+messages and slow search were fixed. 
+6.2.4 Security Testing 
+• SQL injection attempts using special characters in inputs were blocked by prepared statements. 
+• XSS attempts using <script> tags were neutralized by htmlspecialchars(). 
+• Unauthorized access attempts to admin pages were redirected to login. 
+6.3 Test Cases 
+Test Case TC-01: User Registration 
+ 
+Field 	Test Data 	Expected Result 
+Full Name 	"John Doe" 	Valid 
+Full Name 	"John123" 	Error: Only letters
+
+33 |  
+Field 	Test Data 	Expected Result 
+Email 	"john@example.com" 	Valid 
+Email 	"invalid" 	Error: Invalid email 
+Age 	17 years 	Error: Must be 18+ 
+Password 	"pass" 	Error: Too short 
+Password 	"Pass1234" 	Valid (strength good) 
+Confirm Password mismatch 	Error: Do not match 
+ 
+Test Case TC-02: Login 
+ 
+Input 	Expected Result 
+Valid email & password 	Redirect to dashboard 
+Invalid email 	Error message 
+Wrong password 	Error message 
+Suspended account 	Error: Account suspended 
+ 
+Test Case TC-03: Send Interest 
+ 
+Scenario 	Expected Result 
+User A sends interest to B 	Interest record inserted with status 'pending' 
+User B accepts 	Status changes to 'accepted', chat unlocked 
+User B rejects 	Status changes to 'rejected', chat remains locked
+
+34 |  
+Test Case TC-04: Chat 
+Scenario 	Expected Result 
+Mutual interest accepted Chat interface visible for both 
+User A sends message 	Message appears in database and visible to B via AJAX 
+User B reports message Message flagged, admin notified 
+ 
+Test Case TC-05: Admin – User Management 
+ 
+Action 	Expected Result 
+Search for user by email 	Correct user displayed 
+Suspend user 	User cannot log in 
+Delete user 	User and all related data removed
+
+35 |  
+Chapter7  
+Results & Discussions 
+7.1 User Interface Screenshots 
+(Insert screenshots with captions as listed in the List of Figures) 
+ 
+Figure 8: Registration Form  
+Shows fields with validation messages.
+
+36 |  
+Figure 9: Login Page  
+ 
+Clean layout with email and password fields. 
+ 
+ 
+Figure 10: User Dashboard 
+Displays suggested matches, profile completion, recent activity.
+
+37 |  
+Figure 11: Search Results with Blurred Photos 
+ 
+For free users, photos are blurred; premium indicator shown. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 13: Interests Page  
+ 
+Sent and received interests with accept/reject buttons.
+
+38 |  
+ 
+Figure 14: Chat Interface  
+ 
+Real-time-like chat using AJAX; report button for each message. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 15: Admin Dashboard  
+ 
+Widgets showing total users, active users, pending verifications, etc.
+
+39 |  
+ 
+Figure 16: User Management  
+ 
+Table with user details, edit, suspend, delete options. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 17: Profile Verification Queue  
+ 
+List of users awaiting verification with approve/reject buttons.
+
+40 |  
+ 
+Figure 18: Message Moderation  
+ 
+Flagged messages with user details and action buttons. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 19: Subscription Plans  
+ 
+Admin view to add/edit plans.
+
+41 |  
+ 
+Figure 20: Reports Page  
+ 
+ 
+Date range picker to generate PDF/CSV reports. 
+ 
+ 
+ 
+ 
+ 
+ 
+7.2 Feature Verification 
+ 
+ 
+Feature 	Status 	Remarks 
+User Registration 	Complete 	Works with validation 
+Login/Logout 	Complete 	Session management 
+Profile Creation 	Complete 	Includes photo upload & watermark 
+Search & Filters 	Complete 	All filters functional 
+Compatibility Score 	Complete 	Score displayed 
+Interest Requests 	Complete 	Status tracking works 
+Chat 	Complete 	Works after mutual acceptance 
+Admin User Management 	Complete 	CRUD operations 
+Profile Verification 	Complete 	Admin approves/rejects 
+Reports 	Complete 	Basic reports generated
+
+42 |  
+Feature 	Status 	Remarks 
+Subscription 	Complete 	Manual upgrade works 
+ 
+ 
+7.3 Challenges Faced 
+ 
+ 
+• Image watermarking: Initially, image quality was reduced; optimized by using appropriate compression. 
+• AJAX chat polling: Caused server load; mitigated by increasing poll interval and limiting active chats. 
+• SQL injection prevention: Adopted prepared statements throughout after initial prototyping with concatenated que
+
+43 |  
+Chapter 8  
+Conclusion & Future Work 
+8.1 Conclusion & Scope 
+ 
+The Rishta System successfully provides a secure, feature-rich, and user-friendly digital 
+matrimonial platform. It addresses the key issues of reach, privacy, authenticity, and 
+communication. The use of open-source technologies (PHP, MySQL, HTML, CSS, 
+Bootstrap, JavaScript) ensures that the system is cost-effective and easily deployable. The 
+admin panel gives full control to manage the platform, while the user interface is designed to 
+be intuitive. Testing confirmed that all core features work as intended, and feedback from 
+users was positive. 
+8.2 Lesson Learnt 
+1. The importance of planning the database schema before coding. 
+2. Security must be integrated from the start, not as an afterthought. 
+3. Real-time features (chat) require careful handling of server resources. 
+4. User testing early in development can reveal usability issues. 
+5. Writing modular code simplifies testing and maintenance.
+
+44 |  
+References 
+Welling, L., & Thomson, L. (2016). PHP and MySQL Web Development (5th ed.). Addison 
+Wesley. 
+ Duckett, J. (2014). HTML and CSS: Design and Build Websites. Wiley. 
+Duckett, J. (2014). JavaScript and jQuery: Interactive Front-End Web Development. Wiley. 
+ Späth, P. (2018). Bootstrap 4 – A Beginner's Guide. Après. 
+PHP Manual. (n.d.). Retrieved from https://www.php.net/manual/en/ 
+ MySQL Documentation. (n.d.). Retrieved from https://dev.mysql.com/doc/ 
+W3Schools. (n.d.). Bootstrap 4 Tutorial. Retrieved from https://www.w3schools.com/bootstrap4/ 
+The Apache Software Foundation. (n.d.). Apache HTTP Server Documentation. Retrieved from 
+https://httpd.apache.org/docs/ 
+Various online resources: Stack Overflow, MDN Web Docs, etc.
